@@ -36,7 +36,7 @@ Training Sample Histogram:
 ![png](media/Training_Sample_Histogram.png)
 
 #### Augmented Training Data
-The sample data was increased to 322,500 images using rotation, translation, shearing, warping and flipping:
+The sample data was increased to 430,000 images by brightening, rotating, shearing, warping and flipping the training examples:
 
 Random Augmented Training Samples:
 
@@ -53,16 +53,17 @@ Design and Test a Model Architecture
 
 Preprocessing techniques:
 - Grayscaling (Sermanet and Lecun demonstrated that grayscale images provide higher accuracy when processed through CNN’s in their paper "Traffic Sign Recognition with Multi-Scale Convolutional Networks")
-- Contrast Limited Adaptive Histogram Equalization and Histogram Equalization (for local and global visual equalization)
-- Data Normalization (setting all data to values between -1 and 1)
-- Re-dimensioning of data from 32x32x3 to 32x32x1 (only 1 channel dimension is required for grayscaled images)
+- Equalizing (both locally with Contrast Limited Adaptive Histogram Equalization and globally with Histogram Equalization)
+- Enlarging (by 10% to reduce background noise)
+- Normalizing (setting all data to values between -1 and 1)
+- Re-dimensioning (from 32x32x3 to 32x32x1 since only 1 channel dimension is required for grayscaled images)
 
 Random Preprocessed Training Samples
 ![png](media/Random_Preprocessed_Training_Samples.png)
 
 #### Model Architecture
 
-The Model Architecture is adapted from the Oxford Visual Geometry Group (VGG). A few changes were made to the model.  First, the size of the input layer was reduced from 224x224x3 to 32x32x1.  Then, successive layers were reduced accordingly, which meant fewer layers were needed than Simonyan and Zisserman used when describing VGG in their 2014 paper, "Very Deep Convolutional Networks for Large Scale Image Recognition."
+The Model Architecture is adapted from the Oxford Visual Geometry Group (VGG) as described by Simonyan and Zisserman in their 2014 paper, "Very Deep Convolutional Networks for Large Scale Image Recognition."
 
 VGG Architecture
 
@@ -76,21 +77,28 @@ Training Results:
 
 | EPOCH | Validation<br>Accuracy</br>|
 | :---: | :---: |
-| 1 | 76.51% |
-| 2 | 96.71% |
-| 3 | 98.48% |
-| 4 | 99.00% |
-| 5 | 99.16% |
-| 6 | 99.34% |
-| 7 | 99.46% |
-| 8 | 99.32% |
-| 9 | 99.39% |
-| 10 | 99.55% |
-| 11 | 99.61% |
-| 12 | 99.27% |
-| 13 | 99.46% |
-| 14 | 99.39% |
-| 15 | 99.64% |
+| 1 | 66.92% |
+| 2 | 91.70% |
+| 3 | 96.96% |
+| 4 | 97.51% |
+| 5 | 98.66% |
+| 6 | 98.48% |
+| 7 | 99.05% |
+| 8 | 98.91% |
+| 9 | 98.98% |
+| 10 | 99.05% |
+| 11 | 99.02% |
+| 12 | 99.25% |
+| 13 | 99.09% |
+| 14 | 99.30% |
+| 15 | 98.66% |
+| 16 | 99.34% |
+| 17 | 99.27% |
+| 18 | 98.91% |
+| 19 | 99.34% |
+| 20 | 99.27% |
+| 21 | 98.93% |
+| 22 | 99.39% |
 
 #### Solution Approach
 
@@ -98,8 +106,8 @@ The VGG model architecture was created using a construct that easily abstracts C
 
 #### Error Analysis
 
-- Test Data Accuracy: 97.933%
-- Top-3 test accuracy: 99.311%
+- Test Data Accuracy: 96.722%
+- Top-3 test accuracy: 98.836%
 
 Confusion Matrix:
 
@@ -136,7 +144,7 @@ New Images:
 | 14 |   Speed limit (80km/h) |    Speed limit (80km/h) |
 | 15 |             No passing |              No passing |
 
-Accuracy for these 8 images is 100.0%
+Accuracy for these 15 images is 100.0%
 
 #### Model Certainty - Softmax Probabilities
 
