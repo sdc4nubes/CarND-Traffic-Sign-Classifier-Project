@@ -4,7 +4,7 @@
 Final Result
 --------------
 
-![png](media/Results.gif =600x)
+![png](media/Results.gif)
 
 Files Submitted
 --------------
