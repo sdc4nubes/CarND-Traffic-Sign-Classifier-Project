@@ -32,7 +32,6 @@ Basic Summary of the dataset:
 #### Exploratory Visualization
 
 Training Sample Histogram:
-
 ![png](media/Training_Sample_Histogram.png)
 
 #### Augmented Training Data
@@ -43,7 +42,6 @@ Random Augmented Training Samples:
 ![png](media/Random_Augmented_Training_Samples.png)
 
 Augmented Training Sample Histogram:
-
 ![png](media/Augmented_Training_Sample_Histogram.png)
 
 Design and Test a Model Architecture
