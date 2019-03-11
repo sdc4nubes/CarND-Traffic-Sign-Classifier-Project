@@ -59,6 +59,7 @@ Preprocessing techniques:
 - Re-dimensioning (from 32x32x3 to 32x32x1 since only 1 channel dimension is required for grayscaled images)
 
 Random Preprocessed Training Samples
+
 ![png](media/Random_Preprocessed_Training_Samples.png)
 
 #### Model Architecture
